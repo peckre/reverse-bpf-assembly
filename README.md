@@ -1,32 +1,32 @@
-# 🔍 BPF Decompiler GUI (GPT-o1 Powered)
+# BPF Decompiler GUI (GPT-o1 Powered)
 
 A Python-based GUI that reverse-engineers **compiled BPF (Berkeley Packet Filter)** output into the most likely original human-readable syntax, using OpenAI's `o1-2024-12-17` model.
 
 ---
 
-## ✨ Features
+## Features
 
-- 🧠 Reasoning-powered BPF decompilation
-- 📁 File selector for loading compiled BPF output (e.g. from `tcpdump -d`)
-- 🔐 Two versions of the application:
+- Reasoning-powered BPF decompilation
+- File selector for loading compiled BPF output (e.g. from `tcpdump -d`)
+- Two versions of the application:
   - **Encrypted API Key**: Secure, password-unlocked decryption of embedded key
   - **User Input API Key**: Prompts for API key at runtime
-- 🔄 Live status feedback while the request is processing (User Input Only)
-- 🧵 Responsive threading — no GUI freezes (User Input Only)
+- Live status feedback while the request is processing (User Input Only)
+- Responsive threading — no GUI freezes (User Input Only)
 
 ---
 
-## 📁 Files
+## Files
 
 | File                  | Description                                                   |
 |-----------------------|---------------------------------------------------------------|
-| `bpf_gui.py`          | 🔐 Uses encrypted, password-unlocked OpenAI API key           |
-| `bpf_gui_userkey.py`  | 🔑 Prompts user to enter their OpenAI API key at runtime      |
-| `encrypt_api_key.py`  | 🔐 Helper script to encrypt your API key with a password      |
+| `bpf_gui.py`          | Uses encrypted, password-unlocked OpenAI API key           |
+| `bpf_gui_userkey.py`  | Prompts user to enter their OpenAI API key at runtime      |
+| `encrypt_api_key.py`  | Helper script to encrypt your API key with a password      |
 
 ---
 
-## 🔐 Version 1: Encrypted API Key (bpf_gui.py)
+## Version 1: Encrypted API Key (bpf_gui.py)
 
 1. Run the helper:
    ```bash
@@ -48,7 +48,7 @@ You'll be prompted for your password to unlock the key and select a file to deco
 
 ---
 
-## 🔑 Version 2: Runtime API Key Entry (bpf_gui_userkey.py)
+## Version 2: Runtime API Key Entry (bpf_gui_userkey.py)
 
 No setup needed. Run:
 ```bash
@@ -90,7 +90,7 @@ ip src net 192.168.42.0/24 and tcp port 143
 
 ---
 
-## 🧠 Requirements
+## Requirements
 
 This requires an OpenAI API key. You can get one from the OpenAI website. Multiple models were tested against this requirement; O-1 is the most optimal presently. 
 
