@@ -66,19 +66,26 @@ You'll be prompted to:
 Example `test.txt`:
 ```
 (000) ldh      [12]
-(001) jeq      #0x800           jt 2    jf 8
-(002) ldb      [14]
-(003) and      #0xf
-(004) jgt      #0x5             jt 5    jf 8
-(005) ldh      [16]
-(006) jgt      #0x258           jt 7    jf 8
-(007) ret      #65535
-(008) ret      #0
+(001) jeq      #0x800           jt 2    jf 15
+(002) ld       [26]
+(003) and      #0xffffff00
+(004) jeq      #0xc0a82a00      jt 5    jf 15
+(005) ldb      [23]
+(006) jeq      #0x6             jt 7    jf 15
+(007) ldh      [20]
+(008) jset     #0x1fff          jt 15   jf 9
+(009) ldxb     4*([14]&0xf)
+(010) ldh      [x + 14]
+(011) jeq      #0x8f            jt 14   jf 12
+(012) ldh      [x + 16]
+(013) jeq      #0x8f            jt 14   jf 15
+(014) ret      #262144
+(015) ret      #0
 ```
 
 Example Output:
 ```
-ip and (ip[0] & 0x0f > 5) and (ip[2:2] > 600)
+ip src net 192.168.42.0/24 and tcp port 143
 ```
 
 ---
