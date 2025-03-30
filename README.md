@@ -2,6 +2,8 @@
 
 A Python-based GUI that reverse-engineers **compiled BPF (Berkeley Packet Filter)** output into the most likely original human-readable syntax, using OpenAI's `o1-2024-12-17` model. I'm unfamiliar with a tool to derive compiled BPF's into their human-readable syntax, so for those that find themselves in a situation where they have the compiled BPF but not the original, this may be helpful for you :)
 
+*NEW* Added Python script for DeepSeek R1 API integration as an alternative in the files section.
+
 ---
 
 ## Features
